@@ -4,6 +4,7 @@
  */
 package pcteQuizJavaLocalGt;
 
+import java.awt.event.ActionEvent;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -11,9 +12,11 @@ import java.util.ArrayList;
 
 /**
 * @author Almir_Silva
-* @version 0.1 V03 052V7BB
-* @param mtdSerealizarArrayListDeArrList receiver ArrayList : InstTesteArrayListRemoveIObj = questoes
-* @Literal Class 200 lines
+* @version  0.1, 11 Feb 2018
+* <p>{@literal Version old V03 052V7BB since 07 mar 2013 And new implementation  v0.1, 02/11/18}</p>
+* <p>{@literal Class ClaZZZGravaSerealizaArrayListDeObjetoBD52 has 200 lines}</p>
+* {@link #mtdSerealizarArrayListDeArrList()} "serialData use the ArrayList InstTesteArrayListRemoveIObj for serealize the questoes with writeObject"
+* @serialData os fields of InstTesteArrayListRemoveIObj
 */
 public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 	// Abaixo nós estamos declarando o ArrayList Grande do tipo BD . Vamos declarfar
@@ -171,6 +174,10 @@ public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 	}
 
 	public void mtdSerealizarArrayListDeArrList() {
+		/**
+		 * @author Almir_Silva
+		 * @serialData 	os.writeObject(InstTesteArrayListRemoveIObj) "Serealiza Objetos"
+		 */
 		System.out.println("teste ObjetoBD52");
 		System.out.println("Tentando serealizar ArrayList");
 		try {
