@@ -4,6 +4,7 @@
  */
 package pcteQuizJavaLocalGt;
 
+import java.awt.event.ActionEvent;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
@@ -11,9 +12,10 @@ import java.util.ArrayList;
 /**
 *
 * @author Almir_Silva
-* @version 0.1 V03 052V7BB
-* @Literal Class 100 lines
-* @param metodoReconstArrayListDessereal testa se serealizacao deu certo
+* @version  0.1, 11 Feb 2018
+* <p>{@literal Version old V03 052V7BB since 07 mar 2013 And new implementation  v0.1, 02/11/18}</p>
+* <p>{@literal Class ZTesteDesserealizarArrayListDeBD52 has 100 lines}</p>
+* {@link #metodoReconstArrayListDessereal()} "testa se serealizacao deu certo"
 */
 public class ZTesteDesserealizarArrayListDeBD52 {
 
