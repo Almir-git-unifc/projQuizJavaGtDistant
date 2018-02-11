@@ -5,8 +5,16 @@ import java.io.Serializable;
 /**
 *
 * @author Almir_Silva
-* @version 0.1 V03 052V7BB
-* @literal Class 127 lines
+ * @version  0.1, 11 Feb 2018
+* <p>{@literal Version old V03 052V7BB since 07 mar 2013 And new implementation  v0.1, 02/11/18}</p>
+* <p>{@literal Class create a type data mean, that be will used in moment of serialized BD}</p>
+* <p>{@literal Class ClaBDProQuest52 has 127 lines}</p>
+* <p>{@link #getAlterCert()} "Class has getters e setters because VAR instance are private"</p>
+* <p>{@link #ClaBDProQuest52(String, int, String, String, String, String, String, String, String)}  "Parameter too, are 9 parameter"
+* <p>{@link #ClaBDProQuest52(String, int, String, String, String, String, String, String, String)}  "Constructor Class composed string 
+*  varMateriaQuestao, Number Question, char to Alternative right and five strings to alternatives"</p>
+* {@link #getVarCountPergCreate()}  "Return varCountPergCreate that is VAR static to counter questions created"
+*
 */
 
 public class ClaBDProQuest52 implements Serializable {
@@ -122,6 +130,9 @@ public class ClaBDProQuest52 implements Serializable {
 	}
 
 	public static int getVarCountPergCreate() {
+		/**
+		 * @return varCountPergCreate of getVarCountPergCreate is VAR static to counter questions and answer created
+		*/
 		return varCountPergCreate;
 	}
 
