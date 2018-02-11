@@ -6,8 +6,9 @@ import java.awt.event.ActionListener;
 /**
 *
 * @author Almir_Silva
-* @version 0.1 V03 052V7BB
-* @param actionPerformed receiver evento
+ * @version  0.1, 11 Feb 2018
+* <p>{@literal Version old V03 052V7BB since 07 mar 2013 And new implementation  v0.1, 02/11/18}</p>
+* {@link #actionPerformed(ActionEvent evento)} "Param evento is control of buton mean IN class ClaOuvinteRadioAcoesJRadioBtt52"
 */
 public class ClaOuvinteRadioAcoesJRadioBtt52 implements ActionListener {
 
@@ -24,8 +25,9 @@ public class ClaOuvinteRadioAcoesJRadioBtt52 implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent evento) {
 
-		/* Verificamos se o evento é a resposta certa */
-		/* Verificamos se marcou a alternativa 1 */
+		/*
+		 * @param evento Verifica se o evento é a resposta certa  
+		 */
 		if (evento.getSource() == janela.jrbAlt1 || evento.getSource() == janela.jrbAlt2
 				|| evento.getSource() == janela.jrbAlt3 || evento.getSource() == janela.jrbAlt4
 				|| evento.getSource() == janela.jrbAlt5) {
