@@ -25,19 +25,27 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 /**
- *
  * @author Almir_Silva
- * @version 0.1 V03 052V7BB
- * @Literal  Class 270 lines
- * @param initComponents : Painel : getcontentPane receiver jPanelPerg
- * @param getContentPane receiver Label
- * @param jPanelPerg receiver textfield jtxtCpoPer
+ * @version  0.1, 11 Feb 2018
+* <p>{@literal Version old V03 052V7BB since 07 mar 2013 And new implementation  v0.1, 02/11/18}</p>
+ * <p>{@literal Class ClaAExecGrafBtnV52 has 270 lines}</p>
+ * <p>{@link #initComponents()}  "Create big Painel with 4 sub-panels: jPanelPerg, jPanel1, jPanel2 e jPanel4"</p>
+ * <p>{@link #initComponents()}  "jPanelPerg  in initComponents() is a Panel with Question"
+ * <p>{@link #initComponents()}  "jtxtCpoPer  of jPanelPerg.add() in initComponents() is a label"
+ * <p>{@link #initComponents()}  "jtfCpoTxtResult  of jPanel4.add in initComponents() is textfield for status of answer"
+ * <p>{@link #initComponents()}  "getContentPane().Add() received a Label, JPanel1 (with RadioButon and Questions)"
+ * <p>{@link #initComponents()}  " getContentPane().Add() received too  Jpanel2 (With button),jPanelPerg (Panel Question)"
+ * <p>{@link #initComponents()}  "Parameters of getContentPane().Add() are jtxtCpoPer, jtfCpoTxtResult, jPanelPerg"</p>
+ * {@link #jPanelPerg}  "in initComponents() is a Panel with Question"
+ * <p>{@link #jPanel1}  "in initComponents() is a Panel with JRadioButoon with alterantives answers"</p>
+ * {@link #jPanel2}  "in initComponents() is a Panel with JButoon Responder, Pular, Limpar"
+ * <p>{@link #jPanel4}  "in initComponents() is a Panel with textfiel jtfCpoTxtResult of Status of the answer made"</p>
  */
+/* */
+
 public class ClaAExecGrafBtnV52 extends JFrame {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -2166396122874767802L;
 	public ButtonGroup grupoDeBotones;
 	public JLabel jLabel2;
@@ -57,6 +65,9 @@ public class ClaAExecGrafBtnV52 extends JFrame {
 	JButton botao, btPular, btLimp;
 
 	public ClaAExecGrafBtnV52() {
+		/** 
+		* <p>{@literal Contrutor has initComponents}</p> 
+		* */
 
 		initComponents();
 	}
@@ -84,7 +95,6 @@ public class ClaAExecGrafBtnV52 extends JFrame {
 		setResizable(false);
 		getContentPane().setLayout(null);
 
-
 		jLabel3.setText("TESTE DE QUESTIONÁRIO GERAL - NÍVEL 1");
 		getContentPane().add(jLabel3);
 		jLabel3.setBounds(130, 15, 250, 10);
@@ -94,6 +104,7 @@ public class ClaAExecGrafBtnV52 extends JFrame {
 		jPanelPerg.setLayout(null);
 		// jPanelPerg - RECEM CRIADO
 		
+
 		getContentPane().add(jPanelPerg);
 
 		// ABAIXO DIMENSIONA O PAINEL PERGUNTA
@@ -104,6 +115,8 @@ public class ClaAExecGrafBtnV52 extends JFrame {
 		// Abaixo a barra de rolagem
 		// scroller = new JScrollPane(jtxtCpoPerg);
 		jtxtCpoPerg.setLineWrap(true);
+		
+
 		jPanelPerg.add(jtxtCpoPerg);
 
 		// scroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -229,6 +242,7 @@ public class ClaAExecGrafBtnV52 extends JFrame {
 
 		// Abaixo configura o tamanho do campo à unha
 		jtfCpoTxtResult.setBounds(63, 20, 70, 30);
+
 		jPanel4.add(jLabel2);
 		jPanel4.add(jtfCpoTxtResult);
 
@@ -257,6 +271,8 @@ public class ClaAExecGrafBtnV52 extends JFrame {
 		botao.addActionListener(InstAcoesProOuvBotao);
 		btPular.addActionListener(InstAcoesBtPular);
 		btLimp.addActionListener(InstAcoesBtLimp);
+		
+	
 	}
 
 	public static void main(String args[]) {
