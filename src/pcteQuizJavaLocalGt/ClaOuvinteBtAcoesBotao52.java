@@ -13,8 +13,12 @@ import java.io.FileInputStream;
 /**
 *
 * @author Almir_Silva
-* @version 0.1 V03 052V7BB
-* @literal Class 600 lines
+* @version  0.1, 11 Feb 2018
+* <p>{@literal Version old V03 052V7BB since 07 mar 2013 And new implementation  v0.1, 02/11/18}</p>
+* <p>{@literal Class ClaOuvinteBtAcoesBotao52 has 600 lines}</p>
+* {@link #mtdCriaCaixaMensage(String, int)}  "String varTxtEntr is message of the messageBox
+* and int rectipo is type (Confirmation, etc) of the messageBox"
+* {@link #actionPerformed(ActionEvent evento)} "param evento is control of buton mean"
 */
 
 public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
@@ -205,6 +209,10 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
         }
         
         public void mtdCriaCaixaMensage (String varTxtEntr, int rectipo){
+        	/**
+        	 * @param varTxtEntr of mtdCriaCaixaMensage is message of the messageBox
+        	 * @param rectipo of mtdCriaCaixaMensage is type (Confirmation, etc) of the messageBox
+        	 */
             final  JOptionPane pane = new JOptionPane(varTxtEntr);
             tipo =  rectipo;
             JDialog dialog = pane.createDialog(new JFrame(), "RESULTADO FINAL");               
@@ -364,6 +372,9 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
     
     public void actionPerformed(ActionEvent evento) 
     {         
+    	/**
+    	 * @param evento : is a control of button mean
+    	 */
          if (evento.getSource()== janela.botao){
         
                if(!InstTesteArrayListRemoveIObj.isEmpty()) {         
