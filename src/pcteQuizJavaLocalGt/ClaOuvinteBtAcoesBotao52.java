@@ -37,7 +37,11 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
     static int tipo;
 
     //Abaixo Construtor Padrão e as INICIALIZAÇÕES
+    /**
+     *  @param objeto do construdor da classe ClaOuvinteBtAcoesBotao52 recebe um objeto tipo ClaAExecGrafBtnV52, que eh janela principal
+     */
     public ClaOuvinteBtAcoesBotao52 (ClaAExecGrafBtnV52 objeto){
+        System.out.println("Inicio do Construtor ClaOuvinteBtAcoesBotao52");   	
         instSerealiz = new ClaZZZGravaSerealizaArrayListDeObjetoBD52 ();
         varTotalPerg = instSerealiz.varCountPergSerealiz;            
         i = 0;
@@ -53,6 +57,9 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
         metodoExibeArrayList ();
         // Abaixo só carrega a primeira questão
         carregavartemparr ();
+        System.out.println("FIM do Construtor ClaOuvinteBtAcoesBotao52"); 
+		System.out.println("");
+		System.out.println("");
     }
 
     
@@ -69,11 +76,17 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
     
     public void mtdChamaPreparaMatPrefer ()
     {
-        ClaEscolheMateria InstEscoMat = new ClaEscolheMateria ();        
+        System.out.println("Inicio do Metodo mtdChamaPreparaMatPrefer"); 
+        ClaEscolheMateria InstEscoMat = new ClaEscolheMateria ();  
+        
+        System.out.println("..... Chamando do Metodo mtdPreparaInitMatPrefer InstEscoMat");
         InstEscoMat.mtdPreparaInitMatPrefer();
+        
+        System.out.println("FIM do Metodo mtdChamaPreparaMatPrefer");
     }
     
     public void metodoReconstArrayListDessereal() {    
+        System.out.println("Inicio do Metodo metodoReconstArrayListDessereal"); 
                 try {
 	        ObjectInputStream is = new ObjectInputStream (new FileInputStream("ArrayListBDProj52.ser") );
 	        InstTesteArrayListRemoveIObj = (ArrayList <ArrayList <ClaBDProQuest52> >) is.readObject ( );                                
@@ -88,12 +101,16 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                 System.out.println("Consulte o método mtdSerealizarArrayListDeArrList() da classe OuvinteBotão");
                 System.out.println ("Será que você se esqueceu de serealizar?  Ou será que o BD.ser foi apagado por acidente???");                
 	  ex.printStackTrace ( );
-            }            
+            }       
+                System.out.println("FIM do Metodo metodoReconstArrayListDessereal");                 
     }
     
     
         public void mtdScrumble (){
-            System.out.println("Antes de embaralhar, ArrayList está nesta ordem : " );
+			System.out.println("");
+			System.out.println("");
+			System.out.println("Objeto BD52WW serializado com sucesso!");
+            System.out.println("Inicio do Metodo mtdScrumble. Antes de embaralhar, ArrayList está nesta ordem : " );
             metodoExibeArrayList ();
             System.out.println("");
             for (int q = 0; q < InstTesteArrayListRemoveIObj.size(); q++) {
@@ -101,14 +118,18 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
             }
             System.out.println("Após embaralhar, ArrayList ficou nesta ordem : " );
             metodoExibeArrayList ();
+            System.out.println("FIM do Metodo mtdScrumble");            
             System.out.println("");
                 
         }
     
     
     
-    // Exibe ArrayList na linha de comando
+    /**
+     *  Metodo metodoExibeArrayList  Exibe ArrayList na linha de comando para efeito de monitoria ou debug
+     */
      public void metodoExibeArrayList () {
+         System.out.println("Inicio do metodo metodoExibeArrayList");    	 
         //se não escrever InstTesteArrayListRemoveIObj = new ArrayList <>();  DÁ ERRO NULL POINTER
         if(!InstTesteArrayListRemoveIObj.isEmpty()) {         
             System.out.print("O ArrayList agora é: [");  
@@ -135,30 +156,53 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
             System.out.print("]");
             System.out.println(""); 
        }
+        System.out.println("FIM DO metodo metodoExibeArrayList"); 
+		System.out.println("");
        System.out.println("Escolha uma resposta-alternativa para esta questão "); 
+		System.out.println("");
+		System.out.println("");
     }
-          
-    public  void mtCapturaTeclado (){    
-        // Usando o trecho abaixo para simular o scanner E Solicitaremos um palpite
+     
+     /**
+      * Metodo mtCapturaTeclado Capturado por Scanner in para efeito de Debug
+      */
+    public  void mtCapturaTeclado (){  
+		System.out.println("");
+        System.out.println("Inicio do metodo mtCapturaTeclado pelo scanner");     	
         Scanner in = new Scanner(System.in);
         System.out.println("Digite o seu palpite para a questão ");
         elemCapt = null;
         elemCapt = in.next(); 
+        System.out.println("FIM do metodo mtCapturaTeclado pelo scanner");         
     }      
     
+    
+    /**
+     *  Metodo mtCapturaRadioBotao  Captura a resposta pelos botoes de radio    
+     */
     public void mtCapturaRadioBotao () { 
-        // Vamos capturar a resposta pelos botões de radio
+		System.out.println("");
+        System.out.println("Inicio do metodo mtCapturaRadioBotao");    	
         elemCapt = janela.grupoDeBotones.getSelection().getActionCommand(); 
+        System.out.println("FIM do metodo mtCapturaRadioBotao");
+		System.out.println("");
     }
      
-    public String  mtPapiteCapturado () {                      	
-        //Vamos capturar os valores selecionados no teclado
+    /**
+     * Metodo mtPapiteCapturado  Captura os valores selecionados no teclado    
+     * @return elemCapt  Elemento capturado
+     */
+    public String  mtPapiteCapturado () {    
+		System.out.println("");
+        System.out.println("Inicio do metodo mtPapiteCapturado");
         mtCapturaRadioBotao (); 
-                
+        System.out.println("FIM do metodo mtPapiteCapturado; return elemCapt");  
+		System.out.println("");        
         return elemCapt;           
     }
 
     public void mtDesableBtn (){
+		System.out.println("");
        //ISTO QUANDO TERMIMNOU  
        janela.jrbAlt1.setEnabled(false);
        janela.jrbAlt2.setEnabled(false);
@@ -166,14 +210,21 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
        janela.jrbAlt4.setEnabled(false);
        janela.jrbAlt5 .setEnabled(false); 
     }
+    
+    /**
+     * Metodo mtdLimpaSelecao  Limpa o RadioButon selecionado e desabilita o botao; independente de ACERTAR OU ERRAR  
+     */
      public void mtdLimpaSelecao () {
-      //ACERTOU OU ERRROU     
+			System.out.println("");
+         System.out.println("Inicio do metodo mtdLimpaSelecao");
        janela.grupoDeBotones.clearSelection(); 
        janela.botao.setEnabled(false);                                
-
+       System.out.println("FIM do metodo mtdLimpaSelecao");
     }
     
     public void mtStatusJanela () { 
+		System.out.println("");
+        System.out.println("Inicio do metodo mtStatusJanela"); 
         if (!InstTesteArrayListRemoveIObj.isEmpty()){
                 janela.jtfCpoTxtResult.setText(varStatusAcerto);     
                 janela.jtfCpoTxtResult.setEditable(false);
@@ -185,34 +236,48 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
         else {
                 System.out.println("FIM DO APLICATIVO!!!");
         }
+        System.out.println("FIM do metodo mtStatusJanela");        
     }   
         
         public void mtdLoadProxPerg (){
+			System.out.println("");
+            System.out.println("Inicio do metodo mtdLoadProxPerg");        	
             if(!InstTesteArrayListRemoveIObj.isEmpty()) {  
                              System.out.println(" valor i " + i + " valor j " + j);
                              System.out.print("O array Grande tem " + InstTesteArrayListRemoveIObj.size() + " Elementos " ); 
                              System.out.println("O array Pequeno tem " + InstTesteArrayListRemoveIObj.get(i).size() + " Elementos " ); 
                              varTempPerg = InstTesteArrayListRemoveIObj.get(i).get(j);
                              janela.jtxtCpoPerg.setText(varTempPerg.getQuest()); 
+                             System.out.println("Chamar metodo mtdCarregarAlvernativas");                             
                              mtdCarregarAlvernativas ();
                              janela.btPular.setEnabled(true);
                              janela.btLimp.setEnabled(true);                             
             }
+            System.out.println("FIM do metodo mtdLoadProxPerg"); 
+			System.out.println("");
         }
 
         public void mtdCarregarAlvernativas (){
+			System.out.println("");
+            System.out.println("inicio metodo mtdCarregarAlvernativas");      	
                 janela.jrbAlt1.setText(varTempPerg.getTxtOpcao1());
                 janela.jrbAlt2.setText(varTempPerg.getTxtOpcao2());                 
                 janela.jrbAlt3.setText(varTempPerg.getTxtOpcao3());                 
                 janela.jrbAlt4.setText(varTempPerg.getTxtOpcao4());                 
                 janela.jrbAlt5.setText(varTempPerg.getTxtOpcao5()); 
+                System.out.println("FIM DO metodo mtdCarregarAlvernativas");  
+    			System.out.println("");
         }
         
+        
+    	/**
+    	 * Metodo mtdCriaCaixaMensage Cria caixa de mensagens com avaliacao final
+    	 * @param varTxtEntr of mtdCriaCaixaMensage receiver txt message to be display in messageBox
+    	 * @param rectipo of mtdCriaCaixaMensage is type (Confirmation, Alert, etc) to be display in messageBox
+    	 */        
         public void mtdCriaCaixaMensage (String varTxtEntr, int rectipo){
-        	/**
-        	 * @param varTxtEntr of mtdCriaCaixaMensage is message of the messageBox
-        	 * @param rectipo of mtdCriaCaixaMensage is type (Confirmation, etc) of the messageBox
-        	 */
+			System.out.println("");
+            System.out.println("Inicio do metodo mtdCriaCaixaMensage");         	
             final  JOptionPane pane = new JOptionPane(varTxtEntr);
             tipo =  rectipo;
             JDialog dialog = pane.createDialog(new JFrame(), "RESULTADO FINAL");               
@@ -231,10 +296,14 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                 } 
                 else if (response == JOptionPane.CLOSED_OPTION) {
                     System.out.println("Closed  janela clicado");
-                }                  
+                }  
+                System.out.println("FIM do metodo mtdCriaCaixaMensage");               
         }         
         
+        
         public void mtdAvaliaPerformance (){
+			System.out.println("");
+            System.out.println("Inicio do metodo mtdAvaliaPerformance");         	
             varPercAcerto =  varTotQuestCorrect  * 100 / varTotalPerg;            
             if (varPercAcerto >= 95) {
                 varAvaliacao = "EXCELENTE!!!";
@@ -275,14 +344,27 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                 + "        Nota  de  0  à  49   =   RUIM;            de  50  à  84  =  RAZOÁVEL;           \n" 
                 + "        de  85  à  94   =  BOM;   e  de  95 em  diante     =  ÓTIMO  \n"    
                 + "\n"
-                + "\n";                    
-
+                + "\n";   
+            
+        System.out.println("Chamar metodo mtdCriaCaixaMensage"); 
         mtdCriaCaixaMensage (message, tipo); 
+        System.out.println("Fim do metodo mtdCriaCaixaMensage");      
+        
+        
+        System.out.println("Fim do metodo mtdAvaliaPerformance");         
         }
         
         public void mtdFinalizarCiclo (){
+            System.out.println("Inicio metodo mtdFinalizarCiclo ");
+
+            System.out.println("Chamando metodo mtStatusJanela");
                                         mtStatusJanela ();
+                                        
+                                        System.out.println("");                                      
+                                        System.out.println("Chamando metodo metodoExibeArrayList");                                        
                                         metodoExibeArrayList ();
+                                        
+                                        System.out.println("Chamando metodo mtdLimpaSelecao");                                        
                                         mtdLimpaSelecao ();
 
                                 
@@ -295,17 +377,30 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                                     
                                         }
                                 
+                    System.out.println("FIM do metodo mtdLoadProxPerg ");                                         
                                     mtdLoadProxPerg ();
                                     janela.botao.setEnabled(false); 
                                     janela.btLimp.setEnabled(false); 
+                                    
+             System.out.println("FIM do metodo mtdFinalizarCiclo ");                                     
         }
         
         
         
         public void mtdFinalizarCicloTeste (){
+			System.out.println("");
+			System.out.println("");
+            System.out.println("INICIO do metodo mtdFinalizarCicloTeste "); 
+            
+            System.out.println("Chamando do metodo mtStatusJanela ");            
                                         mtStatusJanela ();
+                                        
+            System.out.println("Chamando do metodo metodoExibeArrayList ");                                       
                                         metodoExibeArrayList ();
+                                        
+            System.out.println("Chamando do metodo mtdLimpaSelecao "); 
                                         mtdLimpaSelecao ();
+                                        
                                         janela.botao.setEnabled(false);                                
                                 
                                         j++;
@@ -317,11 +412,19 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                                     
                                         }
                                 
+                System.out.println("Chamando do metodo mtdLoadProxPerg ");                                        
                                     mtdLoadProxPerg ();
+                                    
+                System.out.println("FIM do metodo mtdFinalizarCicloTeste ");                                    
         }        
-        
-	public void mtdRemoverElementoECelulasVazias ( ) {
 
+    /**
+    * Metodo mtdRemoverElementoECelulasVazias  Remove o Array da Materia vazia e encerra o aplicativo se for o ultimo elemento removido       
+    */
+	public void mtdRemoverElementoECelulasVazias ( ) {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("INICIO do metodo mtdRemoverElementoECelulasVazias ");
             InstTesteArrayListRemoveIObj.get(i).remove(j);
             j--;
                                                                     
@@ -339,7 +442,10 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                     if (InstTesteArrayListRemoveIObj.isEmpty()){
                         varStatusAcerto = "CORRECT: FIM!!!"; 
                         /*seSelected false porque FIM*/
+                        System.out.println("Chamando metodo mtdLimpaSelecao");
                         mtdLimpaSelecao ();
+                        
+                        System.out.println("Chamando metodo mtDesableBtn");
                         mtDesableBtn ();  
                         janela.jtxtCpoPerg.setText("O QUESTIONÁRIO TERMINOU!!!");                                             
                         janela.grupoDeBotones.setSelected(null, false);
@@ -349,6 +455,8 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                                             
                         System.out.println("O Array Grande está vazio: Fim do Aplicativo ");                                     
                         System.out.println("");
+                        
+                        System.out.println("Chamando metodo mtdAvaliaPerformance");                        
                         mtdAvaliaPerformance ();
                         System.out.println(""); 
                                                                                                                 
@@ -367,17 +475,20 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                   else {
                         //NÃO ESTÁ VAZIO                              
                   }
-
+                System.out.println("FIM do metodo mtdRemoverElementoECelulasVazias ");
+        		System.out.println("");
 	}        
-    
+
+	/**
+	 * @param evento : is a control of button mean
+	 */	
     public void actionPerformed(ActionEvent evento) 
     {         
-    	/**
-    	 * @param evento : is a control of button mean
-    	 */
+
          if (evento.getSource()== janela.botao){
         
-               if(!InstTesteArrayListRemoveIObj.isEmpty()) {         
+               if(!InstTesteArrayListRemoveIObj.isEmpty()) {    
+            	   System.out.println(""); 
                System.out.println("Inicio ActionPerformed evento getsource - Se o arraygrande não estiver vazio"); 
 
 	 //vai pegar o grupo de questões mat, depois o port, e por ultimo o cogerais
@@ -432,9 +543,12 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
                                 }
                                 
                         // SE CORRECT OR OF ERROR - NO IMPORT - SERÁ EXECUTADO ESTE TRECHO 
-                                
+                               
+                                System.out.println("Chamando metodo mtdRemoverElementoECelulasVazias");                                
                                 mtdRemoverElementoECelulasVazias ( );                                
                                 
+                                System.out.println("Chamando metodo mtdFinalizarCiclo");
+                                System.out.println("");
                                 mtdFinalizarCiclo ();
                                 
                         //Fim do Se j < varTempArrBD.size
@@ -454,16 +568,29 @@ public class ClaOuvinteBtAcoesBotao52 implements ActionListener{
     }
     
     public  void carregavartemparr (){
+		System.out.println("");
+		System.out.println("");
+    	System.out.println("INICIO do metodo carregavartemparr");
         System.out.println ("o TAMANHO DE InstTesteArrayListRemoveIObj É: " + InstTesteArrayListRemoveIObj.size() );
         varTempArrBD  =  InstTesteArrayListRemoveIObj.get(0);    
         System.out.println ("o TAMANHO DE varTempArrBD É: " + varTempArrBD.size() );
+        
+    	System.out.println("Chamando do metodo mtdLoadProxPerg");        
         mtdLoadProxPerg ();
+        
+    	System.out.println("FIM do metodo carregavartemparr");  
+		System.out.println("");
     }
     
  
-// INNER CLASS  
+    /**
+     *  INNER CLASS ClaOuvinteBtPularAcoes     
+     */ 
 class ClaOuvinteBtPularAcoes implements ActionListener {
 
+	/**
+	 * @param evenBtPula : INNER ClaOuvinteBtPularAcoes-actionPerformed - se acionado btPular  passa a próxima questao
+	 */	
             public void actionPerformed(ActionEvent evenBtPula) 
             {                 
                 if (evenBtPula.getSource()== janela.btPular)
@@ -488,9 +615,15 @@ class ClaOuvinteBtPularAcoes implements ActionListener {
 }
 
 
-//inner class BTLimpar
+/**
+ *  INNER CLASS ClaOuvinteBtLimpSelect 
+ *  
+ */  
 class ClaOuvinteBtLimpSelect implements ActionListener {
    
+	/**
+	 * @param evenBtLimp : INNER ClaOuvinteBtLimpSelect-actionPerformed - se acionado btLimp  então limpa os campos e desabilita btlimpar
+	 */		
             public void actionPerformed(ActionEvent evenBtLimp) 
             { 
                 
@@ -503,7 +636,9 @@ class ClaOuvinteBtLimpSelect implements ActionListener {
 
                         //vai limpar o que estiver selecionado
                 
-                        janela.jtfCpoTxtResult.setText("Limpou");     
+                        janela.jtfCpoTxtResult.setText("Limpou"); 
+                        
+                    	System.out.println("Chamando metodo mtdLimpaSelecao");                         
                         mtdLimpaSelecao();
                         janela.btPular.setEnabled(true);
                         janela.btLimp.setEnabled(false);                        
@@ -514,51 +649,72 @@ class ClaOuvinteBtLimpSelect implements ActionListener {
 // Fim da inner class  ClaOuvinteBtLimpSelect           
 }
 
+/**
+ *  INNER CLASS ClaEscolheMateria    
+ */ 
 class ClaEscolheMateria {
     
+    /**
+     * Metodo mtdPreparaInitMatPrefer  Capta as materias escolhidas e as coloca em ordem de preferencia  	
+     */
         public void mtdPreparaInitMatPrefer () 
         {
-        
+			System.out.println("");
+			System.out.println("");
+        	System.out.println("INICIO DO metodo mtdPreparaInitMatPrefer");  
+        	
+        	System.out.println("Chamando metodo mtdInicializarArrayDeMateriasEOpcoesDisciplina");         	
                 mtdInicializarArrayDeMateriasEOpcoesDisciplina ( );
+                
+            	System.out.println("Chamando metodo metdCaptaOptionPane");              
                 //Insta duas JOptionPane e capta escolhas
                 varPrefDisc1 = metdCaptaOptionPane ("Escolha a primeira matéria", "Matematica");
                 varPrefDisc2 = metdCaptaOptionPane ("Escolha a segunda matéria", "Portugues");
                 JOptionPane.showMessageDialog(null,"A primeira matéria escolhida foi: "+varPrefDisc1  + "\n " 
-		+ "E a segunda matéria escolhida foi " + varPrefDisc2 + "\n " + "Agora vamos às perguntas");
+		        + "E a segunda matéria escolhida foi " + varPrefDisc2 + "\n " + "Agora vamos às perguntas");
 
         
                 //COLOCANDO AS MATÉRIAS EM ORDEM DE PREFERENCIA 1 (o sistema definiu a primeira preferência)
                 System.out.println("O valor da primeira variável preferida é: " + varPrefDisc1);
+                
+            	System.out.println("Chamando metodo mtdColocaMateriaEmOrdemPreferida 1");                
                 mtdColocaMateriaEmOrdemPreferida(varPrefDisc1, 0);
 
                 //VAMOS VER COMO FICOU
                 System.out.println("O valor da segunda variável preferida é: " + varPrefDisc2);
 
                 //COLOCANDO AS MATÉRIAS EM ORDEM DE PREFERENCIA 2 (sistema definiu a segunda preferência)
+            	System.out.println("Chamando metodo mtdColocaMateriaEmOrdemPreferida 2");                 
                 mtdColocaMateriaEmOrdemPreferida(varPrefDisc2, 1);
-        
+                
+            	System.out.println("FIM DO metodo mtdPreparaInitMatPrefer");         
         }
-    
+
+		/**
+		 * Metodo mtdInicializarArrayDeMateriasEOpcoesDisciplina  Cria um ArrayList com os nomes das Disciplinas        
+		 */
     	public void mtdInicializarArrayDeMateriasEOpcoesDisciplina ( ) 
 	    { 
-		//CRIA O PEQUENINO ARRAYLIST
-                System.out.println("INICIO DA CRIAÇÃO DO ARRAYLIST DE STRING PARA  AS TRÊS MATÉRIAS"); 
-		InstArrayListMaterias = new ArrayList <>(); 
-		InstArrayListMaterias.add("Matematica");
-		InstArrayListMaterias.add("Portugues");
-		InstArrayListMaterias.add("Conhecimentos Gerais");
+			System.out.println("");
+			System.out.println("");
+            System.out.println("INICIO metodo mtdInicializarArrayDeMateriasEOpcoesDisciplina PARA CRIAÇÃO DO ARRAYLIST DE STRING PARA  AS TRÊS MATÉRIAS"); 
+		    InstArrayListMaterias = new ArrayList <>(); 
+		    InstArrayListMaterias.add("Matematica");
+		    InstArrayListMaterias.add("Portugues");
+		    InstArrayListMaterias.add("Conhecimentos Gerais");
 
-		for (int i=0; i < InstArrayListMaterias.size ( ); i++) 
-		{
+		    for (int i=0; i < InstArrayListMaterias.size ( ); i++) 
+		    {
                     System.out.println ("O Array de matérias contem o elemento: " + InstArrayListMaterias.get(i) );
-                }                
+            }                
                 System.out.println ("FIM DA CRIAÇÃO DO ARRAYLIST DE STRING PARA  AS TRÊS MATÉRIAS");
                  
-
+    			System.out.println("");
+    			System.out.println("");
                 System.out.println("INICIO DA CRIAÇÃO DO ARRAYLIST DE STRING PARA  OPÇÕES DO COMBOBOX"); 
-		InstArrListOpcoesEntrDisciplina = new ArrayList <>();
-		//Abaixo adiciona todos os elementos do Arraylist InstArrayListMaterias neste arraylist
-		InstArrListOpcoesEntrDisciplina.addAll(InstArrayListMaterias); 
+                InstArrListOpcoesEntrDisciplina = new ArrayList <>();
+                //Abaixo adiciona todos os elementos do Arraylist InstArrayListMaterias neste arraylist
+                InstArrListOpcoesEntrDisciplina.addAll(InstArrayListMaterias); 
 
                 System.out.println("FIM DA CRIAÇÃO DO ARRAYLIST DE STRING PARA  OPÇÕES DO COMBOBOX"); 
 
@@ -566,9 +722,17 @@ class ClaEscolheMateria {
              } 
 
 
-
+/**
+ * Metodo metdCaptaOptionPane  Converte o ArrayList em Matriz; Capta a Opcao escolhida; 
+ * @param varTituloCbBx recebe a disciplina selecionada no JOptionPane ComboBox
+ * @param opcaoPadrao
+ * @return varInput Devolve o valor selecionado a quem chamou o metodo
+ */
     public String metdCaptaOptionPane (String varTituloCbBx, String opcaoPadrao) 
 	{
+		System.out.println("");
+		System.out.println("");
+        System.out.println("INICIO metodo metdCaptaOptionPane SOLICITANDO DISCIPLINA X 1 OU 2");   	
 	    // CONVERTE O ARRAYLIST EM MATRIZ NOVAMENTE
             String [ ] opcoesEntrDisciplina = new String[ InstArrListOpcoesEntrDisciplina.size() ]; 
             InstArrListOpcoesEntrDisciplina.toArray(opcoesEntrDisciplina); 
@@ -584,15 +748,22 @@ class ClaEscolheMateria {
 	    opcoesEntrDisciplina = null;
 
 	    //DEVOLVE O VALOR SELECIONADO PARA QUEM CHAMOU O METODO
+        System.out.println("FIM metodo metdCaptaOptionPane, return varInput");	    
 	    return varInput;
       	}
 
 
-
+    /**
+     * Metodo mtdColocaMateriaEmOrdemPreferida  Coloca as materias em ordem de preferencia
+     * @param materiaPreferida  Eh captado na MessageBox selecionado
+     * @param lugarPreferido
+     */
      public void mtdColocaMateriaEmOrdemPreferida(String materiaPreferida, int lugarPreferido) 
 	{
-                //COLOCANDO AS MATÉRIAS EM ORDEM DE PREFERENCIA
-                //procurando em que lugar do arraylist está a matéria de preferencia 1
+			System.out.println("");
+			System.out.println("");
+         System.out.println("INICIO metodo mtdColocaMateriaEmOrdemPreferida");    	 
+    	    //procurando em que lugar do arraylist está a matéria de preferencia
                 System.out.println("COLOCANDO EM ORDEM DE MATÉRIA PREFERIDA > 0, i"); 
 
 		for (int i = 0; i < 3; i++) 
@@ -607,7 +778,8 @@ class ClaEscolheMateria {
                             	Collections.swap(InstTesteArrayListRemoveIObj, lugarPreferido,i);
 			}
      		}
-		System.out.println("Fim da ordenação da matéria preferida na frente");
+		
+		System.out.println("Fim mtdColocaMateriaEmOrdemPreferida que faz ordenação da matéria preferida na frente");
 	}
     
 }
