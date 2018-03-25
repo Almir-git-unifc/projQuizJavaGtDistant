@@ -19,9 +19,6 @@ import java.io.Serializable;
 
 public class ClaBDProQuest52 implements Serializable {
 
-	/**
-	* 
-	*/
 	private static final long serialVersionUID = 1L;
 	private String varMateriaQuestao;
 	private int numberQuest;
@@ -41,6 +38,7 @@ public class ClaBDProQuest52 implements Serializable {
 			String insertAlter1, String insertAlter2, String insertAlter3, String insertAlter4, String insertAlter5) {
 		// public ClaBDProQuest31 (int insertNumq, String insertRespC, String
 		// insertPer){
+		System.out.println("Criando a Estrutura de Dados BD com o metodo Construtor da Classe BD ClaBDProQuest52");		
 		varMateriaQuestao = MateriaRecebida;
 		numberQuest = insertNumq;
 		alterCert = insertRespC;
@@ -54,9 +52,11 @@ public class ClaBDProQuest52 implements Serializable {
 		System.out.println("Foi criado a pergunta nº : " + varCountPergCreate);
 	}
 
-	// Abaixo métodos modificadores das variáves acima, desta vez a variável de
-	// instância foi declarada privada
-
+	/**
+	 * 
+	 *  Metodo setVarMateriaQuestao e outros metodos modificadores das variaveis de instancias declaradas privadas
+	 * @param MaterQuestaoRec  Materia da questao recebida
+	 */
 	public void setVarMateriaQuestao(String MaterQuestaoRec) {
 		varMateriaQuestao = MaterQuestaoRec;
 	}
@@ -128,11 +128,16 @@ public class ClaBDProQuest52 implements Serializable {
 	public String getTxtOpcao5() {
 		return txtOpcao5;
 	}
+	
+
+	 /**
+	  * 
+	  *  Metodo getVarCountPergCreate contabiliza as questoes criadas e controla questoes respondidas
+	  * @return varCountPergCreate  The VAR is static
+	  */
 
 	public static int getVarCountPergCreate() {
-		/**
-		 * @return varCountPergCreate of getVarCountPergCreate is VAR static to counter questions and answer created
-		*/
+
 		return varCountPergCreate;
 	}
 
