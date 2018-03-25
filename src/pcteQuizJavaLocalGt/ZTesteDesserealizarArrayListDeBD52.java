@@ -19,9 +19,9 @@ import java.util.ArrayList;
 */
 public class ZTesteDesserealizarArrayListDeBD52 {
 
-	ArrayList<ArrayList<ClaBDProQuest52>> InstTesteArrayListRemoveIObj;
-	ArrayList<String> InstArrayListMaterias;
-	ArrayList<String> InstArrListOpcoesEntrDisciplina;
+	private ArrayList<ArrayList<ClaBDProQuest52>> InstTesteArrayListRemoveIObj;
+	private ArrayList<String> InstArrayListMaterias;
+	private ArrayList<String> InstArrListOpcoesEntrDisciplina;
 
 	public ZTesteDesserealizarArrayListDeBD52() {
 		metodoReconstArrayListDessereal();
@@ -30,6 +30,9 @@ public class ZTesteDesserealizarArrayListDeBD52 {
 		// return InstTesteArrayListRecuperado1
 	}
 
+	/**
+	 * Metodo metodoReconstArrayListDessereal  recupera dados que estavam serealizados
+	 */
 	public void metodoReconstArrayListDessereal() {
 		try {
 			ObjectInputStream is = new ObjectInputStream(new FileInputStream("ArrayListBDProj52.ser"));
@@ -56,12 +59,12 @@ public class ZTesteDesserealizarArrayListDeBD52 {
 	public void metodoExibeArrayList() {
 		// se não escrever InstTesteArrayListRemoveIObj = new ArrayList <>(); DÁ ERRO
 		// NULL POINTER
-		// nstTesteArrayListRemoveIObj = new ArrayList <>();
+		// InstTesteArrayListRemoveIObj = new ArrayList <>();
 		if (!InstTesteArrayListRemoveIObj.isEmpty()) {
 			System.out.print("O ArrayList agora é: [ ");
 
 			// Repet Repet Repet Repet
-			// VAMOS CRIAR O MÉTODO PARA PERCORRER TODAS AS PERGUNTAS DO ARRAY
+			// VAMOS CRIAR O FLUXO PARA PERCORRER TODAS AS PERGUNTAS DO ARRAY
 			// PEQUENO QUE ESTÃO CONTIDAS NO ARRAYLIST GRANDE
 
 			for (ArrayList<ClaBDProQuest52> InstArrayListStringTemp : InstTesteArrayListRemoveIObj) {
@@ -77,7 +80,7 @@ public class ZTesteDesserealizarArrayListDeBD52 {
 					ClaBDProQuest52 varTempPerg = InstArrayListStringTemp.get(j);
 
 					// Agora vamos imprimir qualquer atributo desta questão, como
-					// número, a pergutna a matéria, etc...
+					// número, a pergunta a matéria, etc...
 					System.out.print(varTempPerg.getNumberQuest() + " ");
 					System.out.print(varTempPerg.getAlterCert() + "    ");
 				}
