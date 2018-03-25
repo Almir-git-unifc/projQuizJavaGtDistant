@@ -27,14 +27,23 @@ public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 	public int varCountPergSerealiz = 0;
 
 	public ClaZZZGravaSerealizaArrayListDeObjetoBD52() {
-
+		System.out.println("Inicio do metodo construtor da ClaZZZGravaSerealizaArrayListDeObjetoBD52 ");
+		
+		System.out.println("Chamando metodo mtdCriarArrayListDeArraySereal");		
 		mtdCriarArrayListDeArraySereal();
+		
+		System.out.println("Chamando metodo mtdSerealizarArrayListDeArrList");	
 		mtdSerealizarArrayListDeArrList();
 
 	}
 
+	/**
+	 * Metodo mtdCriarArrayListDeArraySereal Cria objeto e adiciona perguntas e suas respostas
+	 */
 	public void mtdCriarArrayListDeArraySereal() {
-
+		System.out.println("");
+		System.out.println("");
+		System.out.println("INICIO do metodo mtdCriarArrayListDeArraySereal ClaZZZGravaSerealiza... que contem as perguntas, alternativas e respostas");			
 		// ABAIXO CRIAMOS NOVE PERGUNTAS
 		ClaBDProQuest52 BDInst1 = new ClaBDProQuest52("Matemática", 1, "b", "Quanto é 1 + 1?", "11?", "2", "Não sei",
 				"Posso pensar?", "Porquê?");
@@ -88,8 +97,8 @@ public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 		// DEPOIS VAMOS CRIAR O OBJETO (USANDO NEW) ONDE IREMOS ADICIONAR AS PERGUNTAS
 		// DE MATEMÁTICA
 		InstPeqArrayListMatematica = new ArrayList<>();
-
-		System.out.println("Criamos o array pequeno para Matemática");
+		System.out.println("Com metodo mtdCriarArrayListDeArraySereal ClaZZZGravaSerealiza... ");
+		System.out.println("Criamos o array pequeno chamado InstPeqArrayListMatematica, e adicionamos questoes de Matematica");
 
 		// Adicionamos três perguntas (Instancias BD) à este Array pequeno
 		InstPeqArrayListMatematica.add(BDInst1);
@@ -106,7 +115,8 @@ public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 		// Criamos outro ArrayList Pequeno para outra matéria (Portugues) do tipo BD
 		ArrayList<ClaBDProQuest52> InstPeqArrayListPortugues;
 
-		System.out.println("Criamos o array pequeno para Portugues");
+		System.out.println("Com metodo mtdCriarArrayListDeArraySereal ClaZZZGravaSerealiza... ");
+		System.out.println("Criamos o array pequeno chamado InstPeqArrayListPortugues, e adicionamos questoes de Portugues");
 
 		// PRIMEIRO VAMOS CRIAR O OBJETO - COM NEW NASCE UM OBJETO
 		InstPeqArrayListPortugues = new ArrayList<>();
@@ -128,6 +138,8 @@ public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 		ArrayList<ClaBDProQuest52> InstPeqArrayListConGerais;
 
 		// DEPOIS VAMOS CRIAR O OBJETO COM NEW
+		System.out.println("Com metodo mtdCriarArrayListDeArraySereal ClaZZZGravaSerealiza... ");
+		System.out.println("Criamos o array pequeno chamado InstPeqArrayListConGerais, e adicionamos questoes de Conhecimentos Gerais");		
 		InstPeqArrayListConGerais = new ArrayList<>();
 		System.out.println("Criamos o array pequeno para Con. Gerais");
 
@@ -145,16 +157,17 @@ public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 		// ArrayList <ArrayList <ClaBDProQuest44> > InstTesteArrayListRemoveIObj = null;
 
 		// AGORA VAMOS CRIAR O OBJETO (USANDO NEW) O ARRAYLIST DE ARRAYLIST GIGANTE
+		System.out.println("Criamos o array Grande chamado InstTesteArrayListRemoveIObj");		
 		InstTesteArrayListRemoveIObj = new ArrayList<>();
 		// Adicionamos cada ArrayList pequeno ao ArrayList grande
 		InstTesteArrayListRemoveIObj.add(InstPeqArrayListMatematica);
-		System.out.println("Adicionado matriz pequena de matemática ao ArrayList Grande");
+		System.out.println("Adicionado matriz pequena de matemática ao ArrayList Grande InstTesteArrayListRemoveIObj");
 
 		InstTesteArrayListRemoveIObj.add(InstPeqArrayListPortugues);
-		System.out.println("Adicionado matriz pequena de Portugues ao ArrayList Grande");
+		System.out.println("Adicionado matriz pequena de Portugues ao ArrayList Grande InstTesteArrayListRemoveIObj");
 
 		InstTesteArrayListRemoveIObj.add(InstPeqArrayListConGerais);
-		System.out.println("Adicionado matriz pequena de Conhec. Gerais ao ArrayList Grande");
+		System.out.println("Adicionado matriz pequena de Conhec. Gerais ao ArrayList Grande InstTesteArrayListRemoveIObj");
 
 		System.out.println("");
 
@@ -168,25 +181,32 @@ public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 		System.out.println("Acabamos de anular as três matrizes pequenas externas, e adeixamos para o GC");
 
 		System.out.println("FIM DA ORGANIZAÇÃO DAS PERGUNTAS");
+		System.out.println("");		
 
-		System.out.println("");
+		System.out.println("FIM DO METPODO mtdCriarArrayListDeArraySereal");
+		System.out.println("");	
+		System.out.println("");	
 
 	}
 
+	/**
+	 * Metodo mtdSerealizarArrayListDeArrList  serealiza o objeto (que tem as questoes e suas respectivas respostas)
+	 * @serialData os.writeObject(InstTesteArrayListRemoveIObj) "Serealiza Objetos"
+	 */	
 	public void mtdSerealizarArrayListDeArrList() {
-		/**
-		 * @author Almir_Silva
-		 * @serialData 	os.writeObject(InstTesteArrayListRemoveIObj) "Serealiza Objetos"
-		 */
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Inicio do metodo mtdSerealizarArrayListDeArrList ");
 		System.out.println("teste ObjetoBD52");
 		System.out.println("Tentando serealizar ArrayList");
 		try {
-			System.out.println("Inicio da Serealização");
+			System.out.println("Inicio TRY da Serealização da Classe ClaZZZGravaSerealizaArrayListDeObjetoBD52");
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("ArrayListBDProj52.ser"));
 			os.writeObject(InstTesteArrayListRemoveIObj);
-			System.out.println("Objeto BD52 serializado com sucesso!");
 			System.out.println("BD52 tem: " + varCountPergSerealiz + " Perguntas!");
+			System.out.println("Objeto BD52WW serializado com sucesso!");
 			System.out.println("");
+			System.out.println("FIM do TRY da Serealização da Classe ClaZZZGravaSerealizaArrayListDeObjetoBD52");			
 			os.flush();
 			os.close();
 		}
@@ -196,7 +216,9 @@ public class ClaZZZGravaSerealizaArrayListDeObjetoBD52 {
 			ex.printStackTrace();
 			System.out.println("");
 		}
-
+		System.out.println("FIM DO METODO Serealizar mtdSerealizarArrayListDeArrList da Classe ClaZZZGravaSerealizaArrayListDeObjetoBD52");
+		System.out.println("");	
+		System.out.println("");	
 	}
 
 	public static void main(String[] args) {
