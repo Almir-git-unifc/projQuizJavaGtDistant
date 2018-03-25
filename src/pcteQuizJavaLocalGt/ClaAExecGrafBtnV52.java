@@ -34,11 +34,11 @@ import javax.swing.WindowConstants;
  * <p>{@link #initComponents()}  "jtxtCpoPer  of jPanelPerg.add() in initComponents() is a label"
  * <p>{@link #initComponents()}  "jtfCpoTxtResult  of jPanel4.add in initComponents() is textfield for status of answer"
  * <p>{@link #initComponents()}  "getContentPane().Add() received a Label, JPanel1 (with RadioButon and Questions)"
- * <p>{@link #initComponents()}  " getContentPane().Add() received too  Jpanel2 (With button),jPanelPerg (Panel Question)"
+ * <p>{@link #initComponents()}  "getContentPane().Add() received too  Jpanel2 (With button),jPanelPerg (Panel Question)"
  * <p>{@link #initComponents()}  "Parameters of getContentPane().Add() are jtxtCpoPer, jtfCpoTxtResult, jPanelPerg"</p>
  * {@link #jPanelPerg}  "in initComponents() is a Panel with Question"
  * <p>{@link #jPanel1}  "in initComponents() is a Panel with JRadioButoon with alterantives answers"</p>
- * {@link #jPanel2}  "in initComponents() is a Panel with JButoon Responder, Pular, Limpar"
+ * {@link #jPanel2}     "in initComponents() is a Panel with JButoon Responder, Pular, Limpar"
  * <p>{@link #jPanel4}  "in initComponents() is a Panel with textfiel jtfCpoTxtResult of Status of the answer made"</p>
  */
 /* */
@@ -75,6 +75,7 @@ public class ClaAExecGrafBtnV52 extends JFrame {
 	 
 	public void initComponents() {
 
+		System.out.println("Inicio do metodo initComponents janela principal");
 		grupoDeBotones = new ButtonGroup();
 
 		jPanelPerg = new JPanel();
@@ -256,23 +257,43 @@ public class ClaAExecGrafBtnV52 extends JFrame {
 		java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 		setBounds((screenSize.width - 521) / 2, (screenSize.height - 410) / 2, 521, 410);
 
+		System.out.println("janela Grafica principal Completada");
+		
+		
 		/* Abaixo criamos um objeto controlador desta classe */
+		System.out.println("Instancia botoes de Radio");		
 		ClaOuvinteRadioAcoesJRadioBtt52 InstVerifRespSelectOuvinteDoRadio = new ClaOuvinteRadioAcoesJRadioBtt52(this);
+		
+		System.out.println("Instancia botao Principal");		
 		ClaOuvinteBtAcoesBotao52 InstAcoesProOuvBotao = new ClaOuvinteBtAcoesBotao52(this);
+		
+		System.out.println("Instancia botao Pular");		
 		ClaOuvinteBtPularAcoes InstAcoesBtPular = InstAcoesProOuvBotao.new ClaOuvinteBtPularAcoes();
+		
+		System.out.println("Instancia botao Limpar");		
 		ClaOuvinteBtAcoesBotao52.ClaOuvinteBtLimpSelect InstAcoesBtLimp = InstAcoesProOuvBotao.new ClaOuvinteBtLimpSelect();
 
 		/* E Abaixo colocamos um ouvinte nos botões, para ver qual será acionado */
+		System.out.println("Instancia Ouvintes dos RadioBotoes");		
 		jrbAlt1.addActionListener(InstVerifRespSelectOuvinteDoRadio);
 		jrbAlt2.addActionListener(InstVerifRespSelectOuvinteDoRadio);
 		jrbAlt3.addActionListener(InstVerifRespSelectOuvinteDoRadio);
 		jrbAlt4.addActionListener(InstVerifRespSelectOuvinteDoRadio);
 		jrbAlt5.addActionListener(InstVerifRespSelectOuvinteDoRadio);
+		
+		System.out.println("Instancia Ouvinte do botao Principal");
 		botao.addActionListener(InstAcoesProOuvBotao);
+		
+		System.out.println("Instancia Ouvinte do botao Pular");		
 		btPular.addActionListener(InstAcoesBtPular);
+		
+		System.out.println("Instancia Ouvinte do botao Limpar");		
 		btLimp.addActionListener(InstAcoesBtLimp);
 		
-	
+		System.out.println("FIM do metodo initComponents janela principal");	
+		System.out.println("");	
+		System.out.println("");		
+		System.out.println("");
 	}
 
 	public static void main(String args[]) {
