@@ -21,13 +21,14 @@ public class ClaOuvinteRadioAcoesJRadioBtt52 implements ActionListener {
 
 	}
 
-
+	/**
+	 * Metodo actionPerformed Verifica se o evento eh a resposta certa 
+	 * @param evento  : se o tem algo selecionado habilita botao principal e btLimp e desabilita janela.btPular, senao desabilita botao principal 
+	 */
 	@Override
 	public void actionPerformed(ActionEvent evento) {
 
-		/*
-		 * @param evento Verifica se o evento é a resposta certa  
-		 */
+
 		if (evento.getSource() == janela.jrbAlt1 || evento.getSource() == janela.jrbAlt2
 				|| evento.getSource() == janela.jrbAlt3 || evento.getSource() == janela.jrbAlt4
 				|| evento.getSource() == janela.jrbAlt5) {
