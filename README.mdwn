@@ -1,9 +1,25 @@
-# projQuizJavaGtDistant
+<h1>Java Quiz </h1>
+
+
+Description: under construction
+
+---------------------------------------------------------------------------------------------------------
+
+ 
+<h3 align="center"> 
+     STATUS: 🚧  React VITE 🚀 App under construction ...  🚧 
+</h3>
+
+
+                     ==================================================
+                      
+
+--------------------------------------------------------------------------------------
+
+About
+Quiz - Jogo de Questões com tecnologia Java
+
 # version 0.1 V03 052V7BB
-Jogo de Questões com tecnologia Java
-
-Este Readme será tratado como um documento que ajudará a refinar o software.
-
 
 ======================================================================================
 
@@ -21,10 +37,9 @@ JavaQuiz é um jogo com questoes que são apresentadas de forma randomica:
 
 
 
-Dependências
+Classes criadas como apoio:
 ......................................................................................
 
-Nesta versao o JavaQuiz depende do pacote pcteQuizJavaLocalGt e das seguintes classes:
 * ClaBDProQuest52.java
 * ClaOuvinteBtAcoesBotao52.java
 * ClaOuvinteRadioAcoesJRadioBtt52.java
